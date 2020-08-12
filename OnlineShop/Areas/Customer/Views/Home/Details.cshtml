@@ -1,0 +1,106 @@
+﻿@model OnlineShop.Models.Products
+@{
+    ViewData["Title"] = "Details";
+}
+
+@using OnlineShop.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+
+    List<Products> products = HttpContextAccessor.HttpContext.Session.Get<List<Products>>("products");
+    Products product = null;
+    if (products != null)
+    {
+        product = products.FirstOrDefault(c => c.Id == Model.Id);
+    }
+}
+<br />
+<h2 class="text-info">Product Details</h2>
+<form asp-action="Details" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border">
+        @*<div class="p-4 rounded border row">*@
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-5">
+                <img src="~/@Model.Image" style="width:100%; height:auto; border-radius: 5px;border: 1px solid #efefef" />
+                @if (Model.IsAvailable)
+                {
+                    <img src="~/images/stock.jpg" style="width:50%;height:50px;" />
+                }
+                else
+                {
+                    <img src="~/images/notavailable.jpg" />
+                }
+                <br />
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="container h3">
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+                <div class="container">
+                    <h5>$:@Html.DisplayFor(model => model.Price)</h5>
+                </div>
+                <div class="container form-inline">
+                    <h5>Reviews:</h5>
+                    <i class="fa fa-star" style="color:orange;"></i>
+                    <i class="fa fa-star" style="color:orange;"></i>
+                    <i class="fa fa-star" style="color:orange;"></i>
+                    <i class="fa fa-star" style="color:orange;"></i>
+                    <i class="fa fa-star-half" style="color:orange;"></i>
+                </div>
+                <div class="container form-inline">
+                    <h4>Color:</h4>
+                    <h6>@Html.DisplayFor(model => model.ProductColor)</h6>
+                </div>
+                <div class="container">
+                    <label>Size</label>
+                    <select class="form-control" style="width:50%;">
+                        <option value="XL">XL</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                    </select>
+                </div>
+                <div class="container">
+                    <label>Qty:</label>
+                    <input class="form-control" type="number" style="width:50%;" />
+                </div>
+                <br />
+                <div class="container">
+                    @if (product != null)
+                    {
+                        <button type="submit" class="btn btn-danger" asp-action="Remove" asp-route-id="@Model.Id"><i class="fas fa-plus"></i>Remove to Cart</button>
+                    }
+                    else
+                    {
+                        <input type="submit" class="btn btn-info form-control" value="Add to Cart" />
+                    }
+
+                </div>
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-secondary" title="View Cart"><i class="far fa-eye" style="width:100%; font-size:large;"></i>view Cart</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-danger" title="Add to Wishlist"><i class="fas fa-heart" style="width:100%; font-size:large;"></i>Add Wishlist</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-secondary" title="Share this Product"><i class="fas fa-share" style="width:100%; font-size:large;"></i>Share</button>
+                        </div>
+                    </div>                                                         
+                </div>
+            </div>
+            <br />
+            <div class="container">
+                <a asp-action="Index" class="btn btn-success"><i class="fas fa-arrow-left "></i>Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

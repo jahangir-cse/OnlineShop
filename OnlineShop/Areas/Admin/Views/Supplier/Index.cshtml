@@ -1,0 +1,82 @@
+﻿@using OnlineShop.Models;
+@model IEnumerable<Supplier>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Supplier List</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info"><i class="fas fa-plus"></i>Add New Supplier</a>
+    </div>
+</div>
+
+<br />
+<div>
+    <table class="table table-striped border" id="myTable">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(c => c.Code)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.MobileNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.Address)
+                </th>
+                <th>Action</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Code</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Address</td>
+                        <td style="width: 200px">
+                            <div class="btn-group">
+                                <a asp-action="Edit" asp-controller="Supplier" class="btn btn-primary" asp-route-id="@Model">Edit</a>
+                                <a asp-action="Details" asp-controller="Supplier" class="btn btn-success" asp-route-id="@Model">Details</a>
+                                <a asp-action="Delete" asp-controller="Supplier" class="btn btn-danger" asp-route-id="@Model">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        @*<tbody>
+            @{
+                foreach (var items in Model)
+                {
+                    <tr>
+                        <td>@items.Code</td>
+                        <td>@items.Name</td>
+                        <td>@items.Email</td>
+                        <td>@items.MobileNo</td>
+                        <td>@items.Address</td>
+                        <td>
+                            <partial name="_ButtonPartialProduct" model="@items.Id" />
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>*@
+
+    </table>
+</div>
+
