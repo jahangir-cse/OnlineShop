@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\VisualStudio\\Versity\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {}
+    "D:\\Project\\VisualStudio\\Versity\\Git\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {}
   },
   "projects": {
-    "D:\\Project\\VisualStudio\\Versity\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
+    "D:\\Project\\VisualStudio\\Versity\\Git\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\VisualStudio\\Versity\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectUniqueName": "D:\\Project\\VisualStudio\\Versity\\Git\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "projectName": "OnlineShop",
-        "projectPath": "D:\\Project\\VisualStudio\\Versity\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectPath": "D:\\Project\\VisualStudio\\Versity\\Git\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "packagesPath": "C:\\Users\\usr\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\VisualStudio\\Versity\\OnlineShop\\OnlineShop\\obj\\",
+        "outputPath": "D:\\Project\\VisualStudio\\Versity\\Git\\OnlineShop\\OnlineShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -67,7 +67,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.4, )"
             },
             "System.Diagnostics.Debug": {
               "target": "Package",

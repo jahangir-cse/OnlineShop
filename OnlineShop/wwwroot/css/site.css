@@ -24,31 +24,14 @@ a {
   border-color: #1861ac;
 }
 /*slide*/
-.carousel-item {
-    height: 500px;
-}
 
-.carousel-img-1 {
-    background: url('../images/ecommerce05.jpg');
-    background-size: cover;
-}
 
-.carousel-img-2 {
-    background: url('../images/ecommerce06.jpg');
-    background-size: cover;
-}
-
-.carousel-img-3 {
-    background: url('../images/ecommerce08.jpeg');
-    background-size: cover;
-}
-
-#background {
-    background: url('../images/dark1.jpg');
+/*#background {
+    background: linear-gradient(to right, gray,#e5e5e5);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-}
+}*/
 
 /* Fixed sidenav, full height */
 .sidebar {
@@ -64,7 +47,7 @@ a {
     .sidebar a {
         display: block;
         color: dodgerblue;
-        padding: 16px;
+        padding: 10px;
         text-decoration: none;
     }
 
@@ -108,7 +91,7 @@ div.content {
 
     .dropdown-content a {
         color: black;
-        padding: 12px 16px;
+        padding: 12px 6px;
         text-decoration: none;
         display: block;
     }
@@ -133,9 +116,10 @@ div.content {
     opacity: 0;
     background-color:black;
     position: absolute;
-    top: 5%;
+    top: 0;
     margin-left: 0;
-    width: 55px;
+    width: 65px;
+    height: 220px;
 }
 
     .overlay-right .fa {
@@ -144,8 +128,8 @@ div.content {
         color: #fff;
         height: 35px;
         width: 35px;
-        font-size: 20px;
-        padding: 7px;
+        font-size: 15px;
+        padding: 5px;
         margin-top: 5%;
         margin-bottom: 5%;
     }
@@ -166,6 +150,22 @@ div.content {
     color: orange;
     font-size: 10px;
 }
+.pagination {
+    margin-left:30px;
+}
+    .pagination li{
+        padding:5px 10px;
+        border:1px solid gray;
+        margin-top:10px;
+    }
+    .pagination li:hover {
+        background:gray;
+        color: white;
+    }
+        .dropdown-toggle::after {
+    margin-left: 50px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -195,17 +195,8 @@ button.accept-policy {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
