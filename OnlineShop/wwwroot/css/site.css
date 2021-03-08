@@ -1,6 +1,9 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+nav {
+    background-color: #f3ebeb;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -28,22 +31,28 @@ a {
 }
 /*slide*/
 .carousel-item {
-    height: 500px;
+    height: 600px;
 }
 
 .carousel-img-1 {
-    background: url('../images/ecommerce05.jpg');
+    background: url('../images/bg1.jpg');
     background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
 }
 
 .carousel-img-2 {
-    background: url('../images/ecommerce06.jpg');
+    background: url('../images/bg2.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .carousel-img-3 {
-    background: url('../images/ecommerce08.jpeg');
+    background: url('../images/bg3.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #background {
@@ -174,8 +183,23 @@ div.content {
 html {
     font-size: 14px;
 }
+.pagination-container {    
+    display: flex;
+    justify-content: center;
+}
+    .pagination-container ul li {
+        background: grey;
+        padding: 8px;
+        border: 1px solid #237af3;
+        color: #15fb3c;
+    }
+        .pagination-container ul li a {
+            color: #fff;
+        }
+
+
 @media (min-width: 768px) {
-  html {
+            html {
     font-size: 16px;
   }
 }

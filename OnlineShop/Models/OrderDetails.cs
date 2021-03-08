@@ -17,6 +17,6 @@ namespace OnlineShop.Models
         [ForeignKey("OrderId")]
         public Order Order { get; set; }
         [ForeignKey("ProductId")]
-        public Products Product { get; set; }
+        public Products Product { get; set; }        
     }
 }

@@ -18,7 +18,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             _db = db;
         }
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(_db.ProductTypes.ToList());

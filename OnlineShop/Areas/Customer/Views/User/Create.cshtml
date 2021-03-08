@@ -3,86 +3,88 @@
     ViewData["Title"] = "Create";
 }
 <br />
-<h2 class="text-info">Add New User</h2>
-<form asp-action="Create" method="post" id="user-form" enctype="multipart/form-data">
-    <div class="p-4 rounded border">
-        <div asp-validation-summary="ModelOnly" class="text-danger">
+<div class="container my-5 py-5" style="background: #f7f2d7;">
+    <h2 class="text-info">Add New User</h2>
+    <form asp-action="Create" method="post" id="user-form" enctype="multipart/form-data">
+        <div class="p-4 rounded border">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
 
-        </div>
-        <h3>@ViewBag.message</h3>
-        <div class="form-group">
-            <div>
-                <label asp-for="UserName"></label>
             </div>
-            <div>
-                <input asp-for="UserName" class="form-control" />
+            <h3>@ViewBag.message</h3>
+            <div class="form-group">
+                <div>
+                    <label asp-for="UserName">Email</label>
+                </div>
+                <div>
+                    <input asp-for="UserName" type="email" class="form-control shadow rounded" placeholder="Enter Email Address" />
+                </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-            <span asp-validation-for="UserName" class="text-danger"></span>
-        </div>
 
-        <div class="form-group">
-            <div>
-                <label asp-for="PasswordHash"></label>
+            <div class="form-group">
+                <div>
+                    <label asp-for="PasswordHash">Password</label>
+                </div>
+                <div>
+                    <input asp-for="PasswordHash" class="form-control shadow rounded" type="password" placeholder="Enter Password" />
+                </div>
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
             </div>
-            <div>
-                <input asp-for="PasswordHash" class="form-control" type="password" />
-            </div>
-            <span asp-validation-for="PasswordHash" class="text-danger"></span>
-        </div>
 
-        <div class="form-group">
-            <div>
-                <label asp-for="FirstName"></label>
+            <div class="form-group">
+                <div>
+                    <label asp-for="FirstName">First Name</label>
+                </div>
+                <div>
+                    <input asp-for="FirstName" class="form-control shadow rounded" placeholder="Enter Your First Name" />
+                </div>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
-            <div>
-                <input asp-for="FirstName" class="form-control" />
-            </div>
-            <span asp-validation-for="FirstName" class="text-danger"></span>
-        </div>
 
-        <div class="form-group">
-            <div>
-                <label asp-for="LastName"></label>
+            <div class="form-group">
+                <div>
+                    <label asp-for="LastName">Last Name</label>
+                </div>
+                <div>
+                    <input asp-for="LastName" class="form-control shadow rounded" placeholder="Enter Your Last Name" />
+                </div>
+                <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
-            <div>
-                <input asp-for="LastName" class="form-control" />
+            <br />
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Save" />
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
             </div>
-            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
-        <br />
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Save" />
-            <a asp-action="Index" class="btn btn-success">Back to List</a>
-        </div>
+    </form>
     </div>
-</form>
-@section Scripts{
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-<script>
-    $(document).ready(function () {
-        $("#user-form").validate({
-            rules: {
-                UserName: {
-                    required: true,
-                },
-                PasswordHash: {
-                    required: true,
-                },
-                FirstName: {
-                    required: true,
-                },
-                LastName: {
-                    required: true,
-                }
-            },
-            messages: {
-                UserName: "Enter your Email",
-                PasswordHash: "Enter your password",
-                FirstName: "Enter your first name",
-                LastName: "Enter your last name",
-            }
-        });
-    });
-</script>
-}
+    @section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+            $(document).ready(function () {
+                $("#user-form").validate({
+                    rules: {
+                        UserName: {
+                            required: true,
+                        },
+                        PasswordHash: {
+                            required: true,
+                        },
+                        FirstName: {
+                            required: true,
+                        },
+                        LastName: {
+                            required: true,
+                        }
+                    },
+                    messages: {
+                        UserName: "Enter your Email",
+                        PasswordHash: "Enter your password",
+                        FirstName: "Enter your first name",
+                        LastName: "Enter your last name",
+                    }
+                });
+            });
+        </script>
+    }
 

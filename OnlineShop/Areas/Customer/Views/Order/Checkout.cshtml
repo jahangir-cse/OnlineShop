@@ -14,116 +14,127 @@
     }
 }
 <br />
-<h2 class="text-info">Order Details</h2>
-<form asp-action="" method="post" enctype="multipart/form-data">
-    <div class="p-4 rounded border">
-        @*<div class="p-4 rounded border row">*@
-        <div asp-validation-summary="ModelOnly" class="text-danger">
+<div class="container my-5 py-5" style="background: #f7f2d7;">
+    <h2 class="text-info">Order Details</h2>
+    <form asp-action="Checkout" method="post" enctype="multipart/form-data">
+        <div class="p-4 rounded border">
+            @*<div class="p-4 rounded border row">*@
+            <div asp-validation-summary="ModelOnly" class="text-danger">
 
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="form-group">
-                    <div>
-                        <label asp-for="Name"></label>
-                    </div>
-                    <div>
-                        <input type="hidden" asp-for="Id" />
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <div>
-                        <label asp-for="PhoneNo"></label>
-                    </div>
-                    <div>
-                        <input asp-for="PhoneNo" class="form-control" />
-                        <span asp-validation-for="PhoneNo" class="text-danger"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <div>
-                        <label asp-for="Address"></label>
-                    </div>
-                    <div>
-                        <input asp-for="Address" class="form-control" />
-                        <span asp-validation-for="Address" class="text-danger"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <div>
-                        <label asp-for="Email"></label>
-                    </div>
-                    <div>
-                        @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <div>
-                        <label asp-for="OrderDate"></label>
-                    </div>
-                    <div>
-                        @*<select asp-for="ProductTagId" asp-items="ViewBag.productTagId" class="form-control"></select>*@
-                        <input asp-for="OrderDate" readonly="readonly" class="form-control" />
-                        <span asp-validation-for="OrderDate" class="text-danger"></span>
-                    </div>
-
-                </div>
             </div>
-            <div class="col-8">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in products)
-                        {
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <div>
+                            <label asp-for="Name"></label>
+                        </div>
+                        <div>
+                            <input type="hidden" asp-for="Id" />
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label asp-for="PhoneNo"></label>
+                        </div>
+                        <div>
+                            <input asp-for="PhoneNo" class="form-control" />
+                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label asp-for="Address"></label>
+                        </div>
+                        <div>
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label asp-for="Email"></label>
+                        </div>
+                        <div>
+                            @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <label asp-for="OrderDate"></label>
+                        </div>
+                        <div>
+                            @*<select asp-for="ProductTagId" asp-items="ViewBag.productTagId" class="form-control"></select>*@
+                            <input asp-for="OrderDate" readonly="readonly" class="form-control" />
+                            <span asp-validation-for="OrderDate" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <p class="text-primary">Payment Gateway:</p>
+                        <input type="radio" id="cash" name="payment" value="Cash On Delivery">
+                        <label for="cash">Cash On Delivery</label>
+                        <input type="radio" id="bkash" name="payment" value="Bkash">
+                        <label for="bkash">Bkash</label>
+                        <input type="radio" id="other" name="payment" value="other">
+                        <label for="other">Others</label>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <table class="table table-bordered">
+                        <thead>
                             <tr>
-                                <td>
-                                    <img src="~/@item.Image" style="width:150px;height:100px;" />
-                                </td>
-                                <td>@item.Name</td>
-                                <td>@item.Price</td>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in products)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/@item.Image" style="width:150px;height:100px;" />
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Price</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
 
-                <div class="text-right">
-                    <h3>Total Price : @products.Sum(c => c.Price)</h3>
+                    <div class="text-right">
+                        <h3>Total Price : @products.Sum(c => c.Price)</h3>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" value="Place Order" class="btn btn-success" />
                 </div>
             </div>
-            <div class="form-group text-right">
-                <input type="submit" asp-action="Index" asp-controller="Home" asp-area="Customer" value="Place Order" class="btn btn-success" />
-            </div>
-        </div>        
-    </div>
-</form>
-@section Scripts{
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script>
-        $(document).ready(function () {
-            $("#OrderDate").datepicker({
-                showAnim: "slide",
-                changeMonth: true,
-                changeYear: true
+        </div>
+    </form>
+</div>
+    @section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+            $(document).ready(function () {
+                $("#OrderDate").datepicker({
+                    showAnim: "slide",
+                    changeMonth: true,
+                    changeYear: true
+                });
             });
-        });
-    </script>
-}
+        </script>
+    }
 

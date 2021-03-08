@@ -32,7 +32,7 @@ namespace OnlineShop.Controllers
 
         public IActionResult Index(int? page)
         {
-            return View(_db.Products.Include(c => c.ProductTypes).Include(c => c.ProductTags).ToList().ToPagedList(page ?? 1,9));
+            return View(_db.Products.Include(c => c.ProductTypes).Include(c => c.ProductTags).ToList().ToPagedList(page ?? 1,12));
         }
 
         //private IActionResult View(object p)

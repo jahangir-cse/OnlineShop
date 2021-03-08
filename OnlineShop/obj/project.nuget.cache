@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H8cHyiKBwlvpX6svAmHyUIERRlDkBJkpBSh9nWzrZy6PyMgjlbUbzGVBUHTyPPrT96PZ44Z9ZeMzSf5emL1nFA==",
+  "dgSpecHash": "bU6gRObdP/sIZaVVPeAXXwn1f9BXAClPSd8qrwiffkmsMibI1krfZHfp29el7OvEBvRThp7jB6aXTs+5Z9rGIQ==",
   "success": true,
-  "projectFilePath": "E:\\Project\\VisualStudio\\MyProject\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+  "projectFilePath": "E:\\Project\\VisualStudio\\New folder\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jahan\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\jahan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

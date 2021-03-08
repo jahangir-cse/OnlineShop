@@ -2,56 +2,58 @@
     ViewData["Title"] = "Edit";
 }
 <br />
-<h2 class="text-info">Edit New Role</h2>
-<form asp-action="Edit" method="post" id="user-form" enctype="multipart/form-data">
-    <div class="p-4 rounded border">
-        <div asp-validation-summary="ModelOnly" class="text-danger">
+<div class="container my-5 py-5" style="background: #f7f2d7;">
+    <h2 class="text-info">Edit New Role</h2>
+    <form asp-action="Edit" method="post" id="user-form" enctype="multipart/form-data">
+        <div class="p-4 rounded border">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
 
-        </div>
-        <h3>@ViewBag.mgs</h3>
-        <div class="form-group">
-            <div>
-                <label>Role Name</label>
             </div>
-            <input type="hidden" value="@ViewBag.id" name="id" />
-            <div>
-                <input id="name" name="name" required="required" value="@ViewBag.name" class="form-control" />
+            <h3>@ViewBag.mgs</h3>
+            <div class="form-group">
+                <div>
+                    <label>Role Name</label>
+                </div>
+                <input type="hidden" value="@ViewBag.id" name="id" />
+                <div>
+                    <input id="name" name="name" required="required" value="@ViewBag.name" class="form-control shadow rounded" />
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Update" />
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
             </div>
         </div>
-        <br />
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Update" />
-            <a asp-action="Index" class="btn btn-success">Back to List</a>
-        </div>
+    </form>
     </div>
-</form>
-@section Scripts{
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script>
-    $(document).ready(function () {
-        $("#user-form").validate({
-            rules: {
-                UserName: {
-                    required: true,
-                },
-                PasswordHash: {
-                    required: true,
-                },
-                FirstName: {
-                    required: true,
-                },
-                LastName: {
-                    required: true,
-                }
-            },
-            messages: {
-                UserName: "Enter your Email",
-                PasswordHash: "Enter your password",
-                FirstName: "Enter your first name",
-                LastName: "Enter your last name",
-            }
-        });
-    });
-    </script>
-}
+    @section Scripts{
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+            $(document).ready(function () {
+                $("#user-form").validate({
+                    rules: {
+                        UserName: {
+                            required: true,
+                        },
+                        PasswordHash: {
+                            required: true,
+                        },
+                        FirstName: {
+                            required: true,
+                        },
+                        LastName: {
+                            required: true,
+                        }
+                    },
+                    messages: {
+                        UserName: "Enter your Email",
+                        PasswordHash: "Enter your password",
+                        FirstName: "Enter your first name",
+                        LastName: "Enter your last name",
+                    }
+                });
+            });
+        </script>
+    }
 

@@ -5,47 +5,49 @@
 }
 
 <br />
-<div class="container">
-    <div class="row">
-        <h2 class="text-info text-center">List of Product Tags</h2>
-    </div>
-    <hr />
-    <form method="post">
+<div class="container my-5 py-5" style="background: #f7f2d7;">
+    <div class="container">
         <div class="row">
-            <input class="form-control" name="productTag" type="text" placeholder="Search by name...." style="width:75%;" />
-            <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> Search</button>
-            <a class="btn btn-dark" asp-action="Index" asp-controller="ProductTag"><i class="fas fa-redo-alt"></i> Reset</a>
-            <a class="btn btn-primary" asp-action="Create" asp-controller="ProductTag"><i class="fas fa-plus"></i> Create</a>
+            <h2 class="text-info text-center">List of Product Tags</h2>
         </div>
-    </form>
-</div>
-<br />
-<div>
-    <table class="table table-hover table-dark table-sm">
-        <thead>
-            <tr class="text-success">
-                <th scope="col">#</th>
-                <th>
-                    @Html.DisplayNameFor(c => c.ProductTag)
-                </th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                var i = 0;
-                foreach (var item in Model)
-                {
-                    i++;
-                    <tr>
-                        <td scope="row">@i</td>
-                        <td>@item.ProductTag</td>
-                        <partial name="_ButtonPartial" model="@item.Id" />
-                    </tr>
+        <hr />
+        <form method="post">
+            <div class="row">
+                <input class="form-control shadow rounded" name="productTag" type="text" placeholder="Search by name...." style="width:75%;" />
+                <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> Search</button>
+                <a class="btn btn-dark" asp-action="Index" asp-controller="ProductTag"><i class="fas fa-redo-alt"></i> Reset</a>
+                <a class="btn btn-primary" asp-action="Create" asp-controller="ProductTag"><i class="fas fa-plus"></i> Create</a>
+            </div>
+        </form>
+    </div>
+    <br />
+    <div>
+        <table class="table table-hover table-dark table-sm">
+            <thead>
+                <tr class="text-success">
+                    <th scope="col">#</th>
+                    <th>
+                        @Html.DisplayNameFor(c => c.ProductTag)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var i = 0;
+                    foreach (var item in Model)
+                    {
+                        i++;
+                        <tr>
+                            <td scope="row">@i</td>
+                            <td>@item.ProductTag</td>
+                            <partial name="_ButtonPartial" model="@item.Id" />
+                        </tr>
+                    }
                 }
-            }
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
 

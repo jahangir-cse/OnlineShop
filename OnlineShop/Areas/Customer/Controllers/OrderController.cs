@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using OnlineShop.Models;
 using OnlineShop.Data;
 using OnlineShop.Utility;
+using Microsoft.EntityFrameworkCore;
 
 namespace OnlineShop.Areas.Customer.Controllers
 {
@@ -17,6 +18,10 @@ namespace OnlineShop.Areas.Customer.Controllers
         public OrderController(ApplicationDbContext db)
         {
             _db = db;
+        }
+        public IActionResult Index(int? page)
+        {
+            return View(_db.OrderDetails.Include(c=>c.Order).Include(c=>c.Product).ToList());
         }
         //get checkout action method
 
@@ -43,7 +48,7 @@ namespace OnlineShop.Areas.Customer.Controllers
             _db.Orders.Add(anOrder);
             await _db.SaveChangesAsync();
             HttpContext.Session.Set("products", new List<Products>());
-            return View();
+            return RedirectToAction(nameof(Index));
         }
         public string GetOrderNo()
         {

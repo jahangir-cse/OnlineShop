@@ -1,0 +1,42 @@
+﻿@using OnlineShop.Models
+@model List<OrderDetails>
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<div class="container my-5 py-5" style="background: #f7f2d7;">
+    <h2>Your Order</h2>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Order No</th>
+                    <th>Name</th>
+                    <th>Phone No</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Product Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>                        
+                        <td>@item.Order.OrderNo</td>
+                        <td>@item.Order.Name</td>
+                        <td>@item.Order.PhoneNo</td>
+                        <td>@item.Order.Email</td>   
+                        <td>@item.Order.Address</td>
+                        <td>@item.Product.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-action="Index" asp-controller="Home" class="btn btn-success">Back to Home</a>
+        </div>       
+    </div>
+</div>
+
