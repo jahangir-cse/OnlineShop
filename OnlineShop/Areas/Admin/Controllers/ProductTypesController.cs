@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
 using OnlineShop.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize]
     public class ProductTypesController : Controller
     {
         private ApplicationDbContext _db;
@@ -16,6 +18,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             _db = db;
         }
+        //[AllowAnonymous]
         public IActionResult Index()
         {
             return View(_db.ProductTypes.ToList());
@@ -55,7 +58,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         //}
 
         //create get action method
-
+        
         public ActionResult Create()
         {
             return View();

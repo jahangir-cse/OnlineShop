@@ -23,15 +23,35 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.error {
+    color: red;
+}
 /*slide*/
+.carousel-item {
+    height: 500px;
+}
 
+.carousel-img-1 {
+    background: url('../images/ecommerce05.jpg');
+    background-size: cover;
+}
 
-/*#background {
-    background: linear-gradient(to right, gray,#e5e5e5);
+.carousel-img-2 {
+    background: url('../images/ecommerce06.jpg');
+    background-size: cover;
+}
+
+.carousel-img-3 {
+    background: url('../images/ecommerce08.jpeg');
+    background-size: cover;
+}
+
+#background {
+    background: url('../images/dark1.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-}*/
+}
 
 /* Fixed sidenav, full height */
 .sidebar {
@@ -47,7 +67,7 @@ a {
     .sidebar a {
         display: block;
         color: dodgerblue;
-        padding: 10px;
+        padding: 16px;
         text-decoration: none;
     }
 
@@ -91,7 +111,7 @@ div.content {
 
     .dropdown-content a {
         color: black;
-        padding: 12px 6px;
+        padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
@@ -116,10 +136,9 @@ div.content {
     opacity: 0;
     background-color:black;
     position: absolute;
-    top: 0;
+    top: 5%;
     margin-left: 0;
-    width: 65px;
-    height: 220px;
+    width: 55px;
 }
 
     .overlay-right .fa {
@@ -128,8 +147,8 @@ div.content {
         color: #fff;
         height: 35px;
         width: 35px;
-        font-size: 15px;
-        padding: 5px;
+        font-size: 20px;
+        padding: 7px;
         margin-top: 5%;
         margin-bottom: 5%;
     }
@@ -150,22 +169,6 @@ div.content {
     color: orange;
     font-size: 10px;
 }
-.pagination {
-    margin-left:30px;
-}
-    .pagination li{
-        padding:5px 10px;
-        border:1px solid gray;
-        margin-top:10px;
-    }
-    .pagination li:hover {
-        background:gray;
-        color: white;
-    }
-        .dropdown-toggle::after {
-    margin-left: 50px;
-}
-
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -195,8 +198,17 @@ button.accept-policy {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-.footer {
+html {
   position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;

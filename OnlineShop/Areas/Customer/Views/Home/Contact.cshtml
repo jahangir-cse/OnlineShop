@@ -5,7 +5,7 @@
 }
 <br />
 <!--Header-->
-<section class="py-5 text-center contact_section text-light">
+<section id="background" class="py-5 text-center text-light">
     <div class="dark-overlay">
         <div class="container">
             <div class="row">
@@ -17,56 +17,45 @@
         </div>
     </div>
 </section>
-<section>
-    <!--Google map-->
-    <div id="map-container-google-1" class="z-depth-1-half map-container">
-        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
-    </div>
-</section>
-<section class="contact_section">
-    <div class="container" style="padding: 50px 10px;">
-        <div class="container" style="padding: 0px 10px 0px 10px;">
-            <div class="row w3-animate-top-scroll">
-                <div class="col-md-6">
-                    <div class="row form-group">
-                        <div class="col-6">
-                            <input type="text" placeholder="Name" class="form-control">
-                        </div>
-                        <div class="col-6">
-                            <input type="text" placeholder="Email Address" class="form-control">
-                        </div>
+<br />
+<section id="background" class="text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/images/map1.jpg" class="img-fluid" style="width:100%;height:100%;" />
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="container">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="Your name..">
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" class="form-control">
+                    <div class="container">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Your email..">
                     </div>
-                    <div class="form-group">
-                        <textarea type="text" placeholder="Enter your message" class="form-control"></textarea>
+                    <div class="container">
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control" placeholder="Your mobile number..">
                     </div>
-                    <div>
-                        <a id="contactbutton" class="form-control" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Submit
-                        </a>
+                    <div class="container">
+                        <label>Country</label>
+                        <select class="form-control">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                        </select>
                     </div>
-                </div>
-                <div class="col-md-6 text-white" style="padding: 20px 10px;">
-                    <p>
-                        <i class="fa fa-map-marker mr-1"></i><span>
-                            ARA Bhaban<br>
-                            39 Kazi Nazrul Islam Avenue<br>
-                            Kawran Bazar, Dhaka - 1215.
-                        </span>
-                    </p>
-                    <p><i class="fa fa-phone mr-1"></i><span>+88 01708 166 101</span></p>
-                    <p><i class="fa fa-phone mr-1"></i><span>+88 01708 166 101</span></p>
-                    <p><i class="fa fa-envelope mr-1" style="font-size: 16px;color: white;"></i><a href="#" style="color: white;">info@onnorokomsoftware.com</a></p>
-                    <p><i class="fa fa-globe mr-1"></i><span>www.onnorokomsoftware.com</span></p>
-                </div>
+                    <div class="container">
+                        <label>Subject</label>
+                        <textarea class="form-control" placeholder="Write something.." style="height:130px"></textarea>
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="Submit" class="btn btn-success">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
+<br />
